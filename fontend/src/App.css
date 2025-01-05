@@ -1,0 +1,13 @@
+.list-group-item {
+    background-color: #121c3e !important;
+    color: white !important;
+    border: 0 !important;
+}
+.list-group-item:hover {
+    background-color: #ffc20e!important;
+    color: white !important;
+}
+.modal-header .btn-close {
+    background-color: #ffc20e;
+    color: white;
+}
