@@ -37,8 +37,8 @@ export default function Signin() {
     }
     return (
         <Row>
-            <Col  md={{ span: 6, offset: 3 }} className="mt-5">
-                <h1>Sign In</h1>
+            <Col  md={{ span: 6, offset: 3 }} className="mt-5 bg-white rounded p-4">
+                <h1 className="fs-2" style={{color:"#121c3e"}}>Sign In</h1>
                 <Form onSubmit={handleSubmit}> 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
@@ -48,7 +48,7 @@ export default function Signin() {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}} value={password} />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" className="border-0" style={{backgroundColor:"#121c3e"}} type="submit">
                         Sign In
                     </Button>
                 </Form>

@@ -11,3 +11,23 @@
     background-color: #ffc20e;
     color: white;
 }
+.offcanvas-header .btn-close {
+    background-color: #ffc107;
+}
+.navbar-toggler {
+    background-color: #ffc107 !important;
+    box-shadow: none !important;
+}
+.navbar-toggler:active {
+    background-color: #ffc107 !important;
+    box-shadow: none !important;
+
+}
+.navbar-toggler:focus {
+    background-color: #ffc107 !important;
+    box-shadow: none !important;
+}
+.form-control:focus {
+    border-color: #ffc107 !important;
+    box-shadow: none !important;
+}

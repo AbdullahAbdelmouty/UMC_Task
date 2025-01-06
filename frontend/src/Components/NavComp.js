@@ -10,19 +10,16 @@ import Sidebar from './Sidebar';
 function OffcanvasExample() {
   return (
     <>
-        <Navbar expand="xxl" className="bg-body-tertiary mb-3">
+        <Navbar expand="xxl" className="mb-3" style={{backgroundColor:"#121c3e !important"}}> 
           <Container fluid>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xxl`} />
-            <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-xxl`}
               aria-labelledby={`offcanvasNavbarLabel-expand-xxl`}
               placement="start"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-xxl`}>
-                  Offcanvas
-                </Offcanvas.Title>
+              <Offcanvas.Header closeButton style={{backgroundColor:"#121c3e"}}>
+      
               </Offcanvas.Header>
               <Offcanvas.Body className='p-0' >
                 <Sidebar/>

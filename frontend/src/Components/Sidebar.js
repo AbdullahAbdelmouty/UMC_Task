@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 export default function Sidebar() {
     return (
         <Container className="p-3" style={{borderRight: "1px solid #e0e0e0",backgroundColor:"#121c3e",minHeight:"100vh"}} >
-        <Row className="mb-4 mt-3">  
+        <Row className="mb-4 mt-3 justify-content-center align-items-center rounded p-2 border border-2 border-white">   
             <Col xs={5} className="pe-0">
             <Image src={logo} rounded />
             </Col>
             <Col xs={5} className="ps-0">
-              <h2 className="fs-6 text-white">Abdullah</h2>
+              <h2 className="fs-6 text-white m-0">Abdullah</h2>
                 <p className="fs-6 m-0 text-white">Software</p>
             </Col>
         </Row>
