@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const sql = require('mssql');
 
 const authenticateUser = async (req, res, next) => {
-    const token = req.signedCookies.token;
-    console.log(token,"token");
+    const token = req.signedCookies.token|| req.headers.authorization.split(' ')[1];
+    console.log(token,"token dfds");
     
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized' });

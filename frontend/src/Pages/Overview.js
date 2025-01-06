@@ -1,6 +1,8 @@
 import React from "react";
 import { Container ,Row,Col, Card,Button} from "react-bootstrap";
 import { GridFill,People,Boxes,BoxArrowLeft } from 'react-bootstrap-icons';
+import { DepartmentContext } from '../Contexts/DepartmentContext';
+import { useContext } from "react";
 
 export default function Overview() {
     return (
@@ -47,7 +49,6 @@ export default function Overview() {
                 <Col>
                 <Card>
                     <Card.Body>
-                        <Card.Text>
                             <table className="table">
                                 <thead>
                                     <tr>
@@ -69,7 +70,6 @@ export default function Overview() {
                                     </tr>
                                 </tbody>
                             </table>
-                        </Card.Text>
                     </Card.Body>
                 </Card>
                 </Col>

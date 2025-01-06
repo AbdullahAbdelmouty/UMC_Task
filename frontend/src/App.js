@@ -16,10 +16,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   //AuthContext
   const {user,dispatch} = useContext(AuthContext);
-  // check if user is logged in 
-  if(user){
-    console.log(user,"user");
-  }
+  const [state,setState] = useState(null);
+  const [userLoggedIn,setUserLoggedIn] = useState(false);
+  const Role = user?.Role;
+  useEffect(() => {
+    if(Role === "admin"){
+      setUserLoggedIn(true);
+      
+    }
+  },[user])
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     // Function to update screen width on resize
     const updateScreenWidth = () => {
@@ -45,10 +50,10 @@ function App() {
         <Col sm={10}>
         <Routes>
           <Route path="/signin" element={<Signin />} />
-          <Route path="/" element={user? <Overview />:<Signin/>} />
-          <Route path="/employees" element={user? <Employees />:<Signin/>} />
-          <Route path="/departments" element={user? <Departments />:<Signin/>} />
-          <Route path="/users" element={user? <Users />:<Signin/>} />
+          <Route path="/" element={userLoggedIn? <Overview />:<Signin/>} />
+          <Route path="/employees" element={userLoggedIn? <Employees />:<Signin/>} />
+          <Route path="/departments" element={userLoggedIn? <Departments />:<Signin/>} />
+          <Route path="/users" element={userLoggedIn? <Users />:<Signin/>} />
         </Routes>
         </Col>
       </Row>

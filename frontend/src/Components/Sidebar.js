@@ -38,13 +38,13 @@ export default function Sidebar() {
                         </Link>
                     </Button>
                 </Col>
-                <Col>
+                {/* <Col>
                     <Button variant="primary" className="list-group-item list-group-item-action rounded">
                         <Link to="/users" className="text-white text-decoration-none">
                         <span><PeopleFill/></span> Users
                         </Link>
                     </Button>
-                </Col>
+                </Col> */}
                 <Col>
                     <Button variant="primary" className="list-group-item list-group-item-action rounded"><span><BoxArrowLeft/></span> Logout</Button>
                 </Col>

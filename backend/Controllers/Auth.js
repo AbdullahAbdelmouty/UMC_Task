@@ -72,7 +72,7 @@ const signIn = async (req, res) => {
         })
         console.log(res.cookie,"res.cookie");
         
-        res.status(200).send({ username,Role });
+        res.status(200).send({username,Role ,token });
     } catch (error) {
         res.status(500).send({ error });
     }

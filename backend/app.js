@@ -25,13 +25,13 @@ const config = {
 app.set('connection', config);
 // cors for cross-origin requests
 const corsOptions = {
-    origin: [`${process.env.FRONT_END_URL}`,`${process.env.DASHBOARD_URL}`],
+    origin: [`${process.env.FRONT_END_URL}`],
     credentials: true
 };
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(cookiesParser(process.env.COOKIE_SECRET));
-app.use(bodyParser.json());
+app.use(cookiesParser(process.env.JWT_SECRET));
+// app.use(bodyParser.json());
 
 // Routes
 app.use('/api/v1/employee', employeeRoutes);

@@ -3,6 +3,7 @@ import {Row,Col,Modal, Container, Button,Form} from 'react-bootstrap';
 import { Trash3,EyeFill,BoxArrowLeft,PencilSquare,BuildingAdd } from 'react-bootstrap-icons';
 import { useState,useContext,useEffect } from 'react';
 import { UserContext } from "../Contexts/UserContext";
+import { AuthContext } from '../Contexts/AuthContext';
 import logo from '../logo.svg';
 export default function Users() {
     // Add Department Modal
@@ -11,14 +12,15 @@ export default function Users() {
     const handleShow = () => setShow(true);
     // User Context
     const {users,dispatch} = useContext(UserContext);
+    const {user} = useContext(AuthContext);
     // fetch all users
-    useEffect(() => {
-        fetch("http://localhost:5000/api/users")
-        .then((res) => res.json())
-        .then((data) => {
-            dispatch({type:"GET_USERS",payload:data});
-        });
-    }, []);
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/api/users")
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //         dispatch({type:"GET_USERS",payload:data});
+    //     });
+    // }, []);
     // states
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');

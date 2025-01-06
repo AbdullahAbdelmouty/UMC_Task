@@ -19,15 +19,20 @@ export const authReducer = (state,action) => {
 }
 // export context
 export const AuthContextProvider = ({ children }) => {
-    const [state,dispatch] = useReducer(authReducer,{user:null});
-    const [user,setUser] = useState(null);
-    // useEffect(() => {
-    //     // get user from local storage
-    //     const user = localStorage.getItem('user');
-    //     if(user){
-    //         dispatch({type:'LOGIN',payload:JSON.parse(user)});
-    //     }
-    // },[])
+    const [state,dispatch] = useReducer(authReducer,{user:JSON.parse(localStorage.getItem('user'))});
+    console.log(state,"state");
+    // save user to local storage
+    useEffect(() => {
+        localStorage.setItem('user',JSON.stringify(state.user));
+    },[state.user])
+    // if user refreshes the page, get the user from local storage
+    useEffect(() => {
+        const user = localStorage.getItem('user');        
+        if(user){
+            dispatch({type:'LOGIN',payload:JSON.parse(user)});
+        }
+    },[])
+    
     return(
         <AuthContext.Provider value={{...state,dispatch}}>
             {children}

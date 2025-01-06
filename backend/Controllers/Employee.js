@@ -82,7 +82,8 @@ const updateEmployee = async (req, res) => {
         const pool = await sql.connect(req.app.get('connection'));
         const { id } = req.params;
         // Destructure the values from the request body
-        const {FirstName: firstName, LastName: lastName, Email: email, DepartmentId: departmentId, HireDate: hireDate, Salary: salary } = req.body;
+        const {firstName, lastName, email,departmentId, hireDate, salary } = req.body;
+        console.log({firstName, lastName, email, departmentId, hireDate, salary });
         
         // get the employee details
         const employee = await pool.request()
@@ -97,7 +98,7 @@ const updateEmployee = async (req, res) => {
         const {FirstName: firstNameDB, LastName: lastNameDB, Email: emailDB, DepartmentId: departmentIdDB, HireDate: hireDateDB, Salary: salaryDB } = employee.recordset[0];
 
         // cannot update the email if it already exists
-        if (email && email !== currentEmail) {
+        if (email && email !== emailDB) {
             const emailExists = await pool.request()
                 .input('email', sql.NVarChar, email)
                 .query('SELECT * FROM Employees WHERE Email = @email');
@@ -113,6 +114,7 @@ const updateEmployee = async (req, res) => {
         const newDepartmentId = departmentId || departmentIdDB;
         const newHireDate = hireDate || hireDateDB;
         const newSalary = salary || salaryDB;
+        console.log({ newFirstName, newLastName, newEmail, newDepartmentId, newHireDate, newSalary });
         
         // Prepare the query to update the employee details
         const result = await pool.request()

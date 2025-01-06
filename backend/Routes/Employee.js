@@ -8,5 +8,6 @@ router.route('/').get(authenticateUser,authorizePermissions("admin"),getEmployee
 
 router.route('/:id').get(authenticateUser,authorizePermissions("admin"),getEmployee)
 .patch(authenticateUser,authorizePermissions("admin"),updateEmployee)
+.delete(authenticateUser,authorizePermissions("admin"),deleteEmployee);
 
 module.exports = router;

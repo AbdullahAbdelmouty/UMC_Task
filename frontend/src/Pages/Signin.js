@@ -7,8 +7,7 @@ import { AuthContext } from '../Contexts/AuthContext';
 export default function Signin() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const api = `${process.env.REACT_APP_BACKEND_URL}api/v1`;
-
+    const api = `${process.env.REACT_APP_BACKEND_URL}/api/v1`;
     const {dispatch} = useContext(AuthContext);
     // handle form submission
     const handleSubmit = (e) => {
