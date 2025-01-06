@@ -42,7 +42,7 @@ export default function Signin() {
                 <Form onSubmit={handleSubmit}> 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" placeholder="Enter email" onChange={(e)=>{setUsername(e.target.value)}} value={username}/>
+                        <Form.Control type="text" placeholder="Enter username" onChange={(e)=>{setUsername(e.target.value)}} value={username}/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
